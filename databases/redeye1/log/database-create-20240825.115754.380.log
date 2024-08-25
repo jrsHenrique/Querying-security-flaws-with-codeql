@@ -1,0 +1,1031 @@
+[2024-08-25 11:57:54] This is codeql database create /home/mrjones/databases/redeye1 --language=javascript --source-root=applications/server
+[2024-08-25 11:57:54] Log file was started late.
+[2024-08-25 11:57:54] [PROGRESS] database create> Initializing database at /home/mrjones/databases/redeye1.
+[2024-08-25 11:57:54] Running plumbing command: codeql database init --language=javascript --extractor-options-verbosity=1 --qlconfig-file=/home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/qlconfig.yml --source-root=/home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server --allow-missing-source-root=false --allow-already-existing -- /home/mrjones/databases/redeye1
+[2024-08-25 11:57:54] Calling plumbing command: codeql resolve languages --extractor-options-verbosity=1 --format=betterjson
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /home/mrjones/Downloads/codeql-bundle-linux64/codeql/.codeqlmanifest.json
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/go/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/python/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/yaml/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/csharp/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/html/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/ruby/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/properties/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/java/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/swift/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/xml/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/cpp/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/codeql-extractor.yml.
+[2024-08-25 11:57:54] [DETAILS] resolve languages> Parsing /home/mrjones/Downloads/codeql-bundle-linux64/codeql/csv/codeql-extractor.yml.
+[2024-08-25 11:57:54] Plumbing command codeql resolve languages completed:
+                      {
+                        "aliases" : {
+                          "c" : "cpp",
+                          "c++" : "cpp",
+                          "c-c++" : "cpp",
+                          "c-cpp" : "cpp",
+                          "c#" : "csharp",
+                          "java-kotlin" : "java",
+                          "kotlin" : "java",
+                          "javascript-typescript" : "javascript",
+                          "typescript" : "javascript"
+                        },
+                        "extractors" : {
+                          "go" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/go"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/python",
+                              "extractor_options" : {
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Python extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the CodeQL Python extractor.\nThe supported levels are (in order of increasing verbosity):\n\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                },
+                                "python_executable_name" : {
+                                  "title" : "Controls the name of the Python executable used by the Python extractor.",
+                                  "description" : "The Python extractor uses platform-dependent heuristics to determine the name of the Python executable to use. Specifying a value for this option overrides the name of the Python executable used by the extractor. Accepted values are py, python and python3. Use this setting with caution, the Python extractor requires Python 3 to run.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(py|python|python3)$"
+                                }
+                              }
+                            }
+                          ],
+                          "yaml" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/yaml"
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "DEPRECATED - Whether to use buildless (standalone) extraction.",
+                                  "description" : "DEPRECATED: Use `--build-mode none` instead.\nA value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the extractor. The supported levels are (in order of increasing verbosity):\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                },
+                                "binlog" : {
+                                  "title" : "Binlog",
+                                  "description" : "[EXPERIMENTAL] The value is a path to the MsBuild binary log file that should be extracted. This option only works when `--build-mode none` is also specified.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/html"
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/properties"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                },
+                                "add_prefer_source" : {
+                                  "title" : "Whether to always prefer source files over class files.",
+                                  "description" : "A value indicating whether source files should be preferred over class files. If set to 'true', the extraction adds '-Xprefer:source' to the javac command line. If set to 'false', the extraction uses the default javac behavior ('-Xprefer:newer'). The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction (experimental).",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/swift"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/xml"
+                            }
+                          ],
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/cpp",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript",
+                              "extractor_options" : {
+                                "skip_types" : {
+                                  "title" : "Skip type extraction for TypeScript",
+                                  "description" : "Whether to skip the extraction of types in a TypeScript application",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/home/mrjones/Downloads/codeql-bundle-linux64/codeql/csv"
+                            }
+                          ]
+                        }
+                      }
+[2024-08-25 11:57:54] [PROGRESS] database init> Calculating baseline information in /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server
+[2024-08-25 11:57:54] [SPAMMY] database init> Ignoring the following directories when processing baseline information: .git, .hg, .svn.
+[2024-08-25 11:57:54] [DETAILS] database init> Running command in /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server: /home/mrjones/Downloads/codeql-bundle-linux64/codeql/tools/linux64/scc --by-file --exclude-dir .git,.hg,.svn --format json --no-large --no-min .
+[2024-08-25 11:57:54] Using configure-baseline script /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/configure-baseline.sh.
+[2024-08-25 11:57:54] [PROGRESS] database init> Running command in /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server: [/home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/configure-baseline.sh]
+[2024-08-25 11:57:54] [SPAMMY] database init> Found 62 baseline files for javascript.
+[2024-08-25 11:57:54] [PROGRESS] database init> Calculated baseline information for languages: javascript (58ms).
+[2024-08-25 11:57:54] [PROGRESS] database init> Resolving extractor javascript.
+[2024-08-25 11:57:54] [DETAILS] database init> Found candidate extractor root for javascript: /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript.
+[2024-08-25 11:57:54] [PROGRESS] database init> Successfully loaded extractor JavaScript/TypeScript (javascript) from /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript.
+[2024-08-25 11:57:54] [PROGRESS] database init> Created skeleton CodeQL database at /home/mrjones/databases/redeye1. This in-progress database is ready to be populated by an extractor.
+[2024-08-25 11:57:54] Plumbing command codeql database init completed.
+[2024-08-25 11:57:54] [PROGRESS] database create> Running build command: []
+[2024-08-25 11:57:54] Running plumbing command: codeql database trace-command --working-dir=/home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server --index-traceless-dbs --no-db-cluster -- /home/mrjones/databases/redeye1
+[2024-08-25 11:57:54] Using autobuild script /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/autobuild.sh.
+[2024-08-25 11:57:54] [PROGRESS] database trace-command> Running command in /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server: [/home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/autobuild.sh]
+[2024-08-25 11:57:55] [build-stdout] Single-threaded extraction.
+[2024-08-25 11:57:55] [build-stdout] package.json: Main file set to src/index.ts
+[2024-08-25 11:57:55] [build-stdout] Found Node.js at: node
+[2024-08-25 11:57:55] [build-stdout] Found Node.js version: v16.20.2
+[2024-08-25 11:57:55] [build-stdout] Opening project /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/tsconfig.json
+[2024-08-25 11:57:55] [build-stdout] Memory for TypeScript process: 2000 MB, and 400 MB reserve
+[2024-08-25 11:57:58] [build-stdout] Done opening project /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/tsconfig.json (2896 ms)
+[2024-08-25 11:57:58] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization-utils.ts
+[2024-08-25 11:57:58] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization-utils.ts (121 ms)
+[2024-08-25 11:57:58] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization.machine.ts
+[2024-08-25 11:57:58] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization.machine.ts (348 ms)
+[2024-08-25 11:57:58] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization.machine.typegen.ts
+[2024-08-25 11:57:58] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization.machine.typegen.ts (15 ms)
+[2024-08-25 11:57:58] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization.test.ts
+[2024-08-25 11:57:58] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization.test.ts (23 ms)
+[2024-08-25 11:57:58] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization.worker.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymization.worker.ts (443 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymize.service.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/anonymize.service.ts (13 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/replace-regex.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/anonymization/replace-regex.ts (87 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/utils/hidden-entities-helper.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/utils/hidden-entities-helper.ts (151 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/utils/project-db.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/utils/project-db.ts (172 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/utils/relation-path.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/utils/relation-path.ts (6 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/environments/environment.prod.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/environments/environment.prod.ts (1 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/environments/environment.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/environments/environment.ts (1 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/http.service.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/http.service.ts (320 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/importLocalCampaigns.service.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/importLocalCampaigns.service.ts (22 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/maindb.service.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/maindb.service.ts (5 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/messenger.machine.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/messenger.machine.ts (46 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/messenger.machine.typegen.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/messenger.machine.typegen.ts (3 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/parser.machine.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/parser.machine.ts (113 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/parser.machine.typegen.ts
+[2024-08-25 11:57:59] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/parser.machine.typegen.ts (6 ms)
+[2024-08-25 11:57:59] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/parser.service.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/parser.service.ts (175 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/server.machine.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/server.machine.ts (122 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/server.machine.typegen.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/server.machine.typegen.ts (7 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/updateProjectMetadata.service.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/machines/updateProjectMetadata.service.ts (30 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/appMetadata.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/appMetadata.ts (3 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/downloadCampaign.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/downloadCampaign.ts (25 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/images.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/images.ts (14 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/index.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/index.ts (12 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/login.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/login.ts (27 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/parserFileValidation.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/parserFileValidation.ts (55 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/uploadCampaign.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/routes/uploadCampaign.ts (56 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/annotation-resolvers.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/annotation-resolvers.ts (103 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/beacon-resolvers.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/beacon-resolvers.ts (24 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/campaign-resolvers.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/campaign-resolvers.ts (127 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/command-group-resolvers.ts
+[2024-08-25 11:58:00] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/command-group-resolvers.ts (100 ms)
+[2024-08-25 11:58:00] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/command-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/command-resolvers.ts (157 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/file-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/file-resolvers.ts (7 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/host-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/host-resolvers.ts (50 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/image-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/image-resolvers.ts (10 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/index.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/index.ts (5 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/links-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/links-resolvers.ts (87 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/log-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/log-resolvers.ts (25 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/operator-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/operator-resolvers.ts (36 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/parser-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/parser-resolvers.ts (31 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/presentation-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/presentation-resolvers.ts (280 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/progress-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/progress-resolvers.ts (3 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/server-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/server-resolvers.ts (85 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/timeline-resolvers.test.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/timeline-resolvers.test.ts (12 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/timeline-resolvers.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/timeline-resolvers.ts (125 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/timeline-resolvers.utils.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/store/timeline-resolvers.utils.ts (9 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/asciiArt.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/asciiArt.ts (13 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/auth.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/auth.ts (9 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/cache.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/cache.ts (51 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/config.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/config.ts (89 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/crypto.test.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/crypto.test.ts (6 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/crypto.ts
+[2024-08-25 11:58:01] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/crypto.ts (15 ms)
+[2024-08-25 11:58:01] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/global.d.ts
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/global.d.ts (3 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/index.ts
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/index.ts (23 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/polyfills.ts
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/polyfills.ts (1 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/scalar.d.ts
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/scalar.d.ts (1 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/types.ts
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/types.ts (5 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/util.ts
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/src/util.ts (12 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/jest.config.ts
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/jest.config.ts (7 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/moon.yml
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/moon.yml (21 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/package.json
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/package.json (2 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/tsconfig.json
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/tsconfig.json (2 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/tsconfig.spec.json
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Desktop/comp/CS-282/cybersec_project/RedEye/applications/server/tsconfig.spec.json (0 ms)
+[2024-08-25 11:58:02] [build-stderr] No externs trap cache found
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/lib/vows.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/lib/vows.js (26 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/lib/jquery-3.2.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/lib/jquery-3.2.js (134 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/lib/bdd.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/lib/bdd.js (10 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/lib/should.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/lib/should.js (23 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/vm/jsshell.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/vm/jsshell.js (52 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/vm/spidermonkey.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/vm/spidermonkey.js (3 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/vm/rhino.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/vm/rhino.js (9 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/vm/v8.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/vm/v8.js (12 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es3.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es3.js (126 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es6_collections.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es6_collections.js (10 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es2017.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es2017.js (2 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es5.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es5.js (10 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es6.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es6.js (61 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/proxy.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/proxy.js (1 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/intl.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/intl.js (10 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es2016.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/es/es2016.js (1 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/os.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/os.js (15 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/process.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/process.js (2 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/globals.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/globals.js (120 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/vm.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/vm.js (10 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/url.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/url.js (5 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/assert_legacy.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/assert_legacy.js (1 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/readline.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/readline.js (13 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/zlib.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/zlib.js (25 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/fs.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/fs.js (89 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/path.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/path.js (17 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/tls.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/tls.js (28 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/timers.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/timers.js (5 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/dns.js
+[2024-08-25 11:58:02] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/dns.js (14 ms)
+[2024-08-25 11:58:02] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/assert.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/assert.js (7 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/sys.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/sys.js (1 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/util.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/util.js (12 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/console.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/console.js (1 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/dgram.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/dgram.js (10 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/net.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/net.js (23 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/buffer.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/buffer.js (6 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/repl.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/repl.js (6 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/stream.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/stream.js (55 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/string_decoder.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/string_decoder.js (3 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/crypto.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/crypto.js (45 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/punycode.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/punycode.js (4 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/cluster.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/cluster.js (48 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/querystring.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/querystring.js (5 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/v8.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/v8.js (3 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/domain.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/domain.js (4 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/module.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/module.js (3 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/child_process.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/child_process.js (36 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/https.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/https.js (10 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/http.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/http.js (30 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/tty.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/tty.js (5 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/constants.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/constants.js (71 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/events.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/events.js (6 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_midi.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_midi.js (8 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_ext.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_ext.js (1 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_requestidlecallback.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_requestidlecallback.js (2 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_encoding.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_encoding.js (2 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_range.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_range.js (11 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_dom.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_dom.js (31 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_anim_timing.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_anim_timing.js (4 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/url.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/url.js (6 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_event.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_event.js (5 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_dom3.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_dom3.js (27 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_permissions.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_permissions.js (3 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/streamsapi.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/streamsapi.js (16 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_dom.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_dom.js (15 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_device_sensor_event.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_device_sensor_event.js (3 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_dom4.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_dom4.js (1 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_gamepad.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_gamepad.js (3 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_event.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_event.js (19 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_webcrypto.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_webcrypto.js (13 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_serviceworker.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_serviceworker.js (22 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/iphone.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/iphone.js (5 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_dom1.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_dom1.js (35 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_batterystatus.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_batterystatus.js (2 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_css3d.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_css3d.js (8 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_event.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_event.js (1 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_rtc.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_rtc.js (90 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_notifications.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_notifications.js (9 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/whatwg_encoding.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/whatwg_encoding.js (2 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/flash.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/flash.js (7 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_selectors.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_selectors.js (8 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/fetchapi.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/fetchapi.js (17 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_css.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_css.js (69 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/intl.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/intl.js (8 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_touch_event.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_touch_event.js (7 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_indexeddb.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_indexeddb.js (28 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/ie_dom.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/ie_dom.js (42 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_screen_orientation.js
+[2024-08-25 11:58:03] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_screen_orientation.js (2 ms)
+[2024-08-25 11:58:03] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/fileapi.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/fileapi.js (39 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_css.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_css.js (46 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/ie_css.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/ie_css.js (8 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_elementtraversal.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_elementtraversal.js (2 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_xml.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_xml.js (11 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_usercontent.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webkit_usercontent.js (1 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/html5.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/html5.js (145 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_pointer_events.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_pointer_events.js (4 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_event3.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_event3.js (2 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/page_visibility.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/page_visibility.js (0 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_navigation_timing.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_navigation_timing.js (10 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webgl.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webgl.js (113 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_dom2.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_dom2.js (73 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_xml.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_xml.js (2 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_css.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/gecko_css.js (10 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_geolocation.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/w3c_geolocation.js (5 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webstorage.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/webstorage.js (4 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/mediasource.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/mediasource.js (7 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/ie_vml.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/ie_vml.js (2 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/window.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/window.js (4 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/ie_event.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/ie_event.js (9 ms)
+[2024-08-25 11:58:04] [build-stdout] Extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/chrome.js
+[2024-08-25 11:58:04] [build-stdout] Done extracting /home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/tools/data/externs/web/chrome.js (20 ms)
+[2024-08-25 11:58:04] Plumbing command codeql database trace-command completed.
+[2024-08-25 11:58:04] [PROGRESS] database create> Finalizing database at /home/mrjones/databases/redeye1.
+[2024-08-25 11:58:04] Running plumbing command: codeql database finalize --no-db-cluster -- /home/mrjones/databases/redeye1
+[2024-08-25 11:58:04] [PROGRESS] database finalize> Running TRAP import for CodeQL database at /home/mrjones/databases/redeye1...
+[2024-08-25 11:58:04] Running plumbing command: codeql dataset import --dbscheme=/home/mrjones/Downloads/codeql-bundle-linux64/codeql/javascript/semmlecode.javascript.dbscheme -- /home/mrjones/databases/redeye1/db-javascript /home/mrjones/databases/redeye1/trap/javascript
+[2024-08-25 11:58:04] Clearing disk cache since the version file /home/mrjones/databases/redeye1/db-javascript/default/cache/version does not exist
+[2024-08-25 11:58:04] Tuple pool not found. Clearing relations with cached strings
+[2024-08-25 11:58:04] Trimming disk cache at /home/mrjones/databases/redeye1/db-javascript/default/cache in mode clear.
+[2024-08-25 11:58:04] Sequence stamp origin is -6146794480759719127
+[2024-08-25 11:58:04] Pausing evaluation to hard-clear memory at sequence stamp o+0
+[2024-08-25 11:58:04] Unpausing evaluation
+[2024-08-25 11:58:04] Pausing evaluation to quickly trim disk at sequence stamp o+1
+[2024-08-25 11:58:04] Unpausing evaluation
+[2024-08-25 11:58:04] Pausing evaluation to zealously trim disk at sequence stamp o+2
+[2024-08-25 11:58:04] Unpausing evaluation
+[2024-08-25 11:58:04] Trimming completed (8ms): Purged everything.
+[2024-08-25 11:58:04] Scanning for files in /home/mrjones/databases/redeye1/trap/javascript
+[2024-08-25 11:58:04] Found 178 TRAP files (10.92 MiB)
+[2024-08-25 11:58:04] [PROGRESS] dataset import> Importing TRAP files
+[2024-08-25 11:58:04] Importing jest.config.ts.trap.gz (1 of 178)
+[2024-08-25 11:58:04] Importing moon.yml.trap.gz (2 of 178)
+[2024-08-25 11:58:04] Importing package.json.trap.gz (3 of 178)
+[2024-08-25 11:58:04] Importing asciiArt.ts.trap.gz (4 of 178)
+[2024-08-25 11:58:04] Importing auth.ts.trap.gz (5 of 178)
+[2024-08-25 11:58:04] Importing cache.ts.trap.gz (6 of 178)
+[2024-08-25 11:58:04] Importing config.ts.trap.gz (7 of 178)
+[2024-08-25 11:58:04] Importing crypto.test.ts.trap.gz (8 of 178)
+[2024-08-25 11:58:04] Importing crypto.ts.trap.gz (9 of 178)
+[2024-08-25 11:58:04] Importing environment.prod.ts.trap.gz (10 of 178)
+[2024-08-25 11:58:04] Importing environment.ts.trap.gz (11 of 178)
+[2024-08-25 11:58:04] Importing global.d.ts.trap.gz (12 of 178)
+[2024-08-25 11:58:04] Importing index.ts.trap.gz (13 of 178)
+[2024-08-25 11:58:04] Importing anonymization-utils.ts.trap.gz (14 of 178)
+[2024-08-25 11:58:04] Importing anonymization.machine.ts.trap.gz (15 of 178)
+[2024-08-25 11:58:04] Importing anonymization.machine.typegen.ts.trap.gz (16 of 178)
+[2024-08-25 11:58:04] Importing anonymization.test.ts.trap.gz (17 of 178)
+[2024-08-25 11:58:04] Importing anonymization.worker.ts.trap.gz (18 of 178)
+[2024-08-25 11:58:05] Importing anonymize.service.ts.trap.gz (19 of 178)
+[2024-08-25 11:58:05] Importing replace-regex.ts.trap.gz (20 of 178)
+[2024-08-25 11:58:05] Importing http.service.ts.trap.gz (21 of 178)
+[2024-08-25 11:58:05] Importing importLocalCampaigns.service.ts.trap.gz (22 of 178)
+[2024-08-25 11:58:05] Importing maindb.service.ts.trap.gz (23 of 178)
+[2024-08-25 11:58:05] Importing messenger.machine.ts.trap.gz (24 of 178)
+[2024-08-25 11:58:05] Importing messenger.machine.typegen.ts.trap.gz (25 of 178)
+[2024-08-25 11:58:05] Importing parser.machine.ts.trap.gz (26 of 178)
+[2024-08-25 11:58:05] Importing parser.machine.typegen.ts.trap.gz (27 of 178)
+[2024-08-25 11:58:05] Importing parser.service.ts.trap.gz (28 of 178)
+[2024-08-25 11:58:05] Importing server.machine.ts.trap.gz (29 of 178)
+[2024-08-25 11:58:05] Importing server.machine.typegen.ts.trap.gz (30 of 178)
+[2024-08-25 11:58:05] Importing updateProjectMetadata.service.ts.trap.gz (31 of 178)
+[2024-08-25 11:58:05] Importing polyfills.ts.trap.gz (32 of 178)
+[2024-08-25 11:58:05] Importing appMetadata.ts.trap.gz (33 of 178)
+[2024-08-25 11:58:05] Importing downloadCampaign.ts.trap.gz (34 of 178)
+[2024-08-25 11:58:05] Importing images.ts.trap.gz (35 of 178)
+[2024-08-25 11:58:05] Importing index.ts.trap.gz (36 of 178)
+[2024-08-25 11:58:05] Importing login.ts.trap.gz (37 of 178)
+[2024-08-25 11:58:05] Importing parserFileValidation.ts.trap.gz (38 of 178)
+[2024-08-25 11:58:05] Importing uploadCampaign.ts.trap.gz (39 of 178)
+[2024-08-25 11:58:05] Importing scalar.d.ts.trap.gz (40 of 178)
+[2024-08-25 11:58:05] Importing annotation-resolvers.ts.trap.gz (41 of 178)
+[2024-08-25 11:58:05] Importing beacon-resolvers.ts.trap.gz (42 of 178)
+[2024-08-25 11:58:05] Importing campaign-resolvers.ts.trap.gz (43 of 178)
+[2024-08-25 11:58:05] Importing command-group-resolvers.ts.trap.gz (44 of 178)
+[2024-08-25 11:58:05] Importing command-resolvers.ts.trap.gz (45 of 178)
+[2024-08-25 11:58:05] Importing file-resolvers.ts.trap.gz (46 of 178)
+[2024-08-25 11:58:05] Importing host-resolvers.ts.trap.gz (47 of 178)
+[2024-08-25 11:58:05] Importing image-resolvers.ts.trap.gz (48 of 178)
+[2024-08-25 11:58:05] Importing index.ts.trap.gz (49 of 178)
+[2024-08-25 11:58:05] Importing links-resolvers.ts.trap.gz (50 of 178)
+[2024-08-25 11:58:05] Importing log-resolvers.ts.trap.gz (51 of 178)
+[2024-08-25 11:58:05] Importing operator-resolvers.ts.trap.gz (52 of 178)
+[2024-08-25 11:58:05] Importing parser-resolvers.ts.trap.gz (53 of 178)
+[2024-08-25 11:58:05] Importing presentation-resolvers.ts.trap.gz (54 of 178)
+[2024-08-25 11:58:05] Importing progress-resolvers.ts.trap.gz (55 of 178)
+[2024-08-25 11:58:05] Importing server-resolvers.ts.trap.gz (56 of 178)
+[2024-08-25 11:58:05] Importing timeline-resolvers.test.ts.trap.gz (57 of 178)
+[2024-08-25 11:58:05] Importing timeline-resolvers.ts.trap.gz (58 of 178)
+[2024-08-25 11:58:05] Importing timeline-resolvers.utils.ts.trap.gz (59 of 178)
+[2024-08-25 11:58:05] Importing hidden-entities-helper.ts.trap.gz (60 of 178)
+[2024-08-25 11:58:05] Importing project-db.ts.trap.gz (61 of 178)
+[2024-08-25 11:58:05] Importing relation-path.ts.trap.gz (62 of 178)
+[2024-08-25 11:58:05] Importing types.ts.trap.gz (63 of 178)
+[2024-08-25 11:58:05] Importing util.ts.trap.gz (64 of 178)
+[2024-08-25 11:58:05] Importing tsconfig.json.codeql-typescript-typetable.trap.gz (65 of 178)
+[2024-08-25 11:58:05] Importing tsconfig.json.trap.gz (66 of 178)
+[2024-08-25 11:58:05] Importing tsconfig.spec.json.trap.gz (67 of 178)
+[2024-08-25 11:58:05] Importing es2016.js.trap.gz (68 of 178)
+[2024-08-25 11:58:05] Importing es2017.js.trap.gz (69 of 178)
+[2024-08-25 11:58:05] Importing es3.js.trap.gz (70 of 178)
+[2024-08-25 11:58:05] Importing es5.js.trap.gz (71 of 178)
+[2024-08-25 11:58:05] Importing es6.js.trap.gz (72 of 178)
+[2024-08-25 11:58:05] Importing es6_collections.js.trap.gz (73 of 178)
+[2024-08-25 11:58:05] Importing intl.js.trap.gz (74 of 178)
+[2024-08-25 11:58:05] Importing proxy.js.trap.gz (75 of 178)
+[2024-08-25 11:58:05] Importing bdd.js.trap.gz (76 of 178)
+[2024-08-25 11:58:05] Importing jquery-3.2.js.trap.gz (77 of 178)
+[2024-08-25 11:58:05] Importing should.js.trap.gz (78 of 178)
+[2024-08-25 11:58:05] Importing vows.js.trap.gz (79 of 178)
+[2024-08-25 11:58:05] Importing assert.js.trap.gz (80 of 178)
+[2024-08-25 11:58:05] Importing assert_legacy.js.trap.gz (81 of 178)
+[2024-08-25 11:58:05] Importing buffer.js.trap.gz (82 of 178)
+[2024-08-25 11:58:05] Importing child_process.js.trap.gz (83 of 178)
+[2024-08-25 11:58:05] Importing cluster.js.trap.gz (84 of 178)
+[2024-08-25 11:58:05] Importing console.js.trap.gz (85 of 178)
+[2024-08-25 11:58:05] Importing constants.js.trap.gz (86 of 178)
+[2024-08-25 11:58:05] Importing crypto.js.trap.gz (87 of 178)
+[2024-08-25 11:58:05] Importing dgram.js.trap.gz (88 of 178)
+[2024-08-25 11:58:05] Importing dns.js.trap.gz (89 of 178)
+[2024-08-25 11:58:05] Importing domain.js.trap.gz (90 of 178)
+[2024-08-25 11:58:05] Importing events.js.trap.gz (91 of 178)
+[2024-08-25 11:58:05] Importing fs.js.trap.gz (92 of 178)
+[2024-08-25 11:58:05] Importing globals.js.trap.gz (93 of 178)
+[2024-08-25 11:58:05] Importing http.js.trap.gz (94 of 178)
+[2024-08-25 11:58:05] Importing https.js.trap.gz (95 of 178)
+[2024-08-25 11:58:05] Importing module.js.trap.gz (96 of 178)
+[2024-08-25 11:58:05] Importing net.js.trap.gz (97 of 178)
+[2024-08-25 11:58:05] Importing os.js.trap.gz (98 of 178)
+[2024-08-25 11:58:05] Importing path.js.trap.gz (99 of 178)
+[2024-08-25 11:58:05] Importing process.js.trap.gz (100 of 178)
+[2024-08-25 11:58:05] Importing punycode.js.trap.gz (101 of 178)
+[2024-08-25 11:58:05] Importing querystring.js.trap.gz (102 of 178)
+[2024-08-25 11:58:05] Importing readline.js.trap.gz (103 of 178)
+[2024-08-25 11:58:05] Importing repl.js.trap.gz (104 of 178)
+[2024-08-25 11:58:05] Importing stream.js.trap.gz (105 of 178)
+[2024-08-25 11:58:05] Importing string_decoder.js.trap.gz (106 of 178)
+[2024-08-25 11:58:05] Importing sys.js.trap.gz (107 of 178)
+[2024-08-25 11:58:05] Importing timers.js.trap.gz (108 of 178)
+[2024-08-25 11:58:05] Importing tls.js.trap.gz (109 of 178)
+[2024-08-25 11:58:05] Importing tty.js.trap.gz (110 of 178)
+[2024-08-25 11:58:05] Importing url.js.trap.gz (111 of 178)
+[2024-08-25 11:58:05] Importing util.js.trap.gz (112 of 178)
+[2024-08-25 11:58:05] Importing v8.js.trap.gz (113 of 178)
+[2024-08-25 11:58:05] Importing vm.js.trap.gz (114 of 178)
+[2024-08-25 11:58:05] Importing zlib.js.trap.gz (115 of 178)
+[2024-08-25 11:58:05] Importing jsshell.js.trap.gz (116 of 178)
+[2024-08-25 11:58:05] Importing rhino.js.trap.gz (117 of 178)
+[2024-08-25 11:58:05] Importing spidermonkey.js.trap.gz (118 of 178)
+[2024-08-25 11:58:05] Importing v8.js.trap.gz (119 of 178)
+[2024-08-25 11:58:05] Importing chrome.js.trap.gz (120 of 178)
+[2024-08-25 11:58:05] Importing fetchapi.js.trap.gz (121 of 178)
+[2024-08-25 11:58:05] Importing fileapi.js.trap.gz (122 of 178)
+[2024-08-25 11:58:05] Importing flash.js.trap.gz (123 of 178)
+[2024-08-25 11:58:05] Importing gecko_css.js.trap.gz (124 of 178)
+[2024-08-25 11:58:05] Importing gecko_dom.js.trap.gz (125 of 178)
+[2024-08-25 11:58:05] Importing gecko_event.js.trap.gz (126 of 178)
+[2024-08-25 11:58:05] Importing gecko_ext.js.trap.gz (127 of 178)
+[2024-08-25 11:58:05] Importing gecko_xml.js.trap.gz (128 of 178)
+[2024-08-25 11:58:05] Importing html5.js.trap.gz (129 of 178)
+[2024-08-25 11:58:06] Importing ie_css.js.trap.gz (130 of 178)
+[2024-08-25 11:58:06] Importing ie_dom.js.trap.gz (131 of 178)
+[2024-08-25 11:58:06] Importing ie_event.js.trap.gz (132 of 178)
+[2024-08-25 11:58:06] Importing ie_vml.js.trap.gz (133 of 178)
+[2024-08-25 11:58:06] Importing intl.js.trap.gz (134 of 178)
+[2024-08-25 11:58:06] Importing iphone.js.trap.gz (135 of 178)
+[2024-08-25 11:58:06] Importing mediasource.js.trap.gz (136 of 178)
+[2024-08-25 11:58:06] Importing page_visibility.js.trap.gz (137 of 178)
+[2024-08-25 11:58:06] Importing streamsapi.js.trap.gz (138 of 178)
+[2024-08-25 11:58:06] Importing url.js.trap.gz (139 of 178)
+[2024-08-25 11:58:06] Importing w3c_anim_timing.js.trap.gz (140 of 178)
+[2024-08-25 11:58:06] Importing w3c_batterystatus.js.trap.gz (141 of 178)
+[2024-08-25 11:58:06] Importing w3c_css.js.trap.gz (142 of 178)
+[2024-08-25 11:58:06] Importing w3c_css3d.js.trap.gz (143 of 178)
+[2024-08-25 11:58:06] Importing w3c_device_sensor_event.js.trap.gz (144 of 178)
+[2024-08-25 11:58:06] Importing w3c_dom1.js.trap.gz (145 of 178)
+[2024-08-25 11:58:06] Importing w3c_dom2.js.trap.gz (146 of 178)
+[2024-08-25 11:58:06] Importing w3c_dom3.js.trap.gz (147 of 178)
+[2024-08-25 11:58:06] Importing w3c_dom4.js.trap.gz (148 of 178)
+[2024-08-25 11:58:06] Importing w3c_elementtraversal.js.trap.gz (149 of 178)
+[2024-08-25 11:58:06] Importing w3c_encoding.js.trap.gz (150 of 178)
+[2024-08-25 11:58:06] Importing w3c_event.js.trap.gz (151 of 178)
+[2024-08-25 11:58:06] Importing w3c_event3.js.trap.gz (152 of 178)
+[2024-08-25 11:58:06] Importing w3c_gamepad.js.trap.gz (153 of 178)
+[2024-08-25 11:58:06] Importing w3c_geolocation.js.trap.gz (154 of 178)
+[2024-08-25 11:58:06] Importing w3c_indexeddb.js.trap.gz (155 of 178)
+[2024-08-25 11:58:06] Importing w3c_midi.js.trap.gz (156 of 178)
+[2024-08-25 11:58:06] Importing w3c_navigation_timing.js.trap.gz (157 of 178)
+[2024-08-25 11:58:06] Importing w3c_permissions.js.trap.gz (158 of 178)
+[2024-08-25 11:58:06] Importing w3c_pointer_events.js.trap.gz (159 of 178)
+[2024-08-25 11:58:06] Importing w3c_range.js.trap.gz (160 of 178)
+[2024-08-25 11:58:06] Importing w3c_requestidlecallback.js.trap.gz (161 of 178)
+[2024-08-25 11:58:06] Importing w3c_rtc.js.trap.gz (162 of 178)
+[2024-08-25 11:58:06] Importing w3c_screen_orientation.js.trap.gz (163 of 178)
+[2024-08-25 11:58:06] Importing w3c_selectors.js.trap.gz (164 of 178)
+[2024-08-25 11:58:06] Importing w3c_serviceworker.js.trap.gz (165 of 178)
+[2024-08-25 11:58:06] Importing w3c_touch_event.js.trap.gz (166 of 178)
+[2024-08-25 11:58:06] Importing w3c_webcrypto.js.trap.gz (167 of 178)
+[2024-08-25 11:58:06] Importing w3c_xml.js.trap.gz (168 of 178)
+[2024-08-25 11:58:06] Importing webgl.js.trap.gz (169 of 178)
+[2024-08-25 11:58:06] Importing webkit_css.js.trap.gz (170 of 178)
+[2024-08-25 11:58:06] Importing webkit_dom.js.trap.gz (171 of 178)
+[2024-08-25 11:58:06] Importing webkit_event.js.trap.gz (172 of 178)
+[2024-08-25 11:58:06] Importing webkit_notifications.js.trap.gz (173 of 178)
+[2024-08-25 11:58:06] Importing webkit_usercontent.js.trap.gz (174 of 178)
+[2024-08-25 11:58:06] Importing webstorage.js.trap.gz (175 of 178)
+[2024-08-25 11:58:06] Importing whatwg_encoding.js.trap.gz (176 of 178)
+[2024-08-25 11:58:06] Importing window.js.trap.gz (177 of 178)
+[2024-08-25 11:58:06] Importing sourceLocationPrefix.trap.gz (178 of 178)
+[2024-08-25 11:58:06] [PROGRESS] dataset import> Merging relations
+[2024-08-25 11:58:06] Merging 1 fragment for 'files'.
+[2024-08-25 11:58:06] Merged 1408 bytes (1.38 KiB) for 'files'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'folders'.
+[2024-08-25 11:58:06] Merged 232 bytes for 'folders'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'containerparent'.
+[2024-08-25 11:58:06] Merged 1632 bytes (1.59 KiB) for 'containerparent'.
+[2024-08-25 11:58:06] Merging 3 fragments for 'locations_default'.
+[2024-08-25 11:58:06] Merged 5758872 bytes (5.49 MiB) for 'locations_default'.
+[2024-08-25 11:58:06] Merging 3 fragments for 'hasLocation'.
+[2024-08-25 11:58:06] Merged 2388800 bytes (2.28 MiB) for 'hasLocation'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'extraction_data'.
+[2024-08-25 11:58:06] Merged 2816 bytes (2.75 KiB) for 'extraction_data'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'scopes'.
+[2024-08-25 11:58:06] Merged 39256 bytes (38.34 KiB) for 'scopes'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'indentation'.
+[2024-08-25 11:58:06] Merged 468016 bytes (457.05 KiB) for 'indentation'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'numlines'.
+[2024-08-25 11:58:06] Merged 5568 bytes (5.44 KiB) for 'numlines'.
+[2024-08-25 11:58:06] Merging 2 fragments for 'tokeninfo'.
+[2024-08-25 11:58:06] Merged 2487140 bytes (2.37 MiB) for 'tokeninfo'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'toplevels'.
+[2024-08-25 11:58:06] Merged 1376 bytes (1.34 KiB) for 'toplevels'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'scopenodes'.
+[2024-08-25 11:58:06] Merged 39248 bytes (38.33 KiB) for 'scopenodes'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'scopenesting'.
+[2024-08-25 11:58:06] Merged 39248 bytes (38.33 KiB) for 'scopenesting'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_module'.
+[2024-08-25 11:58:06] Merged 384 bytes for 'is_module'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_es2015_module'.
+[2024-08-25 11:58:06] Merged 240 bytes for 'is_es2015_module'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'variables'.
+[2024-08-25 11:58:06] Merged 143700 bytes (140.33 KiB) for 'variables'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'local_type_names'.
+[2024-08-25 11:58:06] Merged 7764 bytes (7.58 KiB) for 'local_type_names'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'local_namespace_names'.
+[2024-08-25 11:58:06] Merged 6648 bytes (6.49 KiB) for 'local_namespace_names'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'stmts'.
+[2024-08-25 11:58:06] Merged 335540 bytes (327.68 KiB) for 'stmts'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'stmt_containers'.
+[2024-08-25 11:58:06] Merged 134216 bytes (131.07 KiB) for 'stmt_containers'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'exprs'.
+[2024-08-25 11:58:06] Merged 1604660 bytes (1.53 MiB) for 'exprs'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'enclosing_stmt'.
+[2024-08-25 11:58:06] Merged 573600 bytes (560.16 KiB) for 'enclosing_stmt'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'expr_containers'.
+[2024-08-25 11:58:06] Merged 655112 bytes (639.76 KiB) for 'expr_containers'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'literals'.
+[2024-08-25 11:58:06] Merged 568608 bytes (555.28 KiB) for 'literals'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'regexpterm'.
+[2024-08-25 11:58:06] Merged 46900 bytes (45.80 KiB) for 'regexpterm'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'regexp_const_value'.
+[2024-08-25 11:58:06] Merged 10648 bytes (10.40 KiB) for 'regexp_const_value'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'typedecl'.
+[2024-08-25 11:58:06] Merged 5176 bytes (5.05 KiB) for 'typedecl'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'namespacedecl'.
+[2024-08-25 11:58:06] Merged 4432 bytes (4.33 KiB) for 'namespacedecl'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'has_type_keyword'.
+[2024-08-25 11:58:06] Merged 376 bytes for 'has_type_keyword'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'decl'.
+[2024-08-25 11:58:06] Merged 61480 bytes (60.04 KiB) for 'decl'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'properties'.
+[2024-08-25 11:58:06] Merged 33760 bytes (32.97 KiB) for 'properties'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_greedy'.
+[2024-08-25 11:58:06] Merged 268 bytes for 'is_greedy'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_capture'.
+[2024-08-25 11:58:06] Merged 408 bytes for 'is_capture'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'array_size'.
+[2024-08-25 11:58:06] Merged 1432 bytes (1.40 KiB) for 'array_size'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'typeexprs'.
+[2024-08-25 11:58:06] Merged 33120 bytes (32.34 KiB) for 'typeexprs'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'namespacebind'.
+[2024-08-25 11:58:06] Merged 16 bytes for 'namespacebind'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'bind'.
+[2024-08-25 11:58:06] Merged 114064 bytes (111.39 KiB) for 'bind'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'entry_cfg_node'.
+[2024-08-25 11:58:06] Merged 37248 bytes (36.38 KiB) for 'entry_cfg_node'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'exit_cfg_node'.
+[2024-08-25 11:58:06] Merged 37248 bytes (36.38 KiB) for 'exit_cfg_node'.
+[2024-08-25 11:58:06] Merging 2 fragments for 'successor'.
+[2024-08-25 11:58:06] Merged 823304 bytes (804.01 KiB) for 'successor'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'filetype'.
+[2024-08-25 11:58:06] Merged 1408 bytes (1.38 KiB) for 'filetype'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'extraction_time'.
+[2024-08-25 11:58:06] Merged 63360 bytes (61.88 KiB) for 'extraction_time'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'yaml_scalars'.
+[2024-08-25 11:58:06] Merged 936 bytes for 'yaml_scalars'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'yaml'.
+[2024-08-25 11:58:06] Merged 2568 bytes (2.51 KiB) for 'yaml'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'yaml_locations'.
+[2024-08-25 11:58:06] Merged 856 bytes for 'yaml_locations'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'json'.
+[2024-08-25 11:58:06] Merged 1920 bytes (1.88 KiB) for 'json'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'json_locations'.
+[2024-08-25 11:58:06] Merged 768 bytes for 'json_locations'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'json_literals'.
+[2024-08-25 11:58:06] Merged 756 bytes for 'json_literals'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'json_properties'.
+[2024-08-25 11:58:06] Merged 732 bytes for 'json_properties'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'comments'.
+[2024-08-25 11:58:06] Merged 213380 bytes (208.38 KiB) for 'comments'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'next_token'.
+[2024-08-25 11:58:06] Merged 85352 bytes (83.35 KiB) for 'next_token'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'ast_node_type'.
+[2024-08-25 11:58:06] Merged 152320 bytes (148.75 KiB) for 'ast_node_type'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'declared_function_signature'.
+[2024-08-25 11:58:06] Merged 4616 bytes (4.51 KiB) for 'declared_function_signature'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'invoke_expr_signature'.
+[2024-08-25 11:58:06] Merged 13816 bytes (13.49 KiB) for 'invoke_expr_signature'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'invoke_expr_overload_index'.
+[2024-08-25 11:58:06] Merged 13008 bytes (12.70 KiB) for 'invoke_expr_overload_index'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'ast_node_symbol'.
+[2024-08-25 11:58:06] Merged 18536 bytes (18.10 KiB) for 'ast_node_symbol'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'guard_node'.
+[2024-08-25 11:58:06] Merged 8208 bytes (8.02 KiB) for 'guard_node'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_computed'.
+[2024-08-25 11:58:06] Merged 8 bytes for 'is_computed'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_abstract_member'.
+[2024-08-25 11:58:06] Merged 928 bytes for 'is_abstract_member'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_optional_member'.
+[2024-08-25 11:58:06] Merged 104 bytes for 'is_optional_member'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'typebind'.
+[2024-08-25 11:58:06] Merged 3464 bytes (3.38 KiB) for 'typebind'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'isOptionalChaining'.
+[2024-08-25 11:58:06] Merged 420 bytes for 'isOptionalChaining'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_arguments_object'.
+[2024-08-25 11:58:06] Merged 16068 bytes (15.69 KiB) for 'is_arguments_object'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_method'.
+[2024-08-25 11:58:06] Merged 396 bytes for 'is_method'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_generator'.
+[2024-08-25 11:58:06] Merged 4 bytes for 'is_generator'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_optional_parameter_declaration'.
+[2024-08-25 11:58:06] Merged 260 bytes for 'is_optional_parameter_declaration'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'has_declare_keyword'.
+[2024-08-25 11:58:06] Merged 4 bytes for 'has_declare_keyword'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_async'.
+[2024-08-25 11:58:06] Merged 400 bytes for 'is_async'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc'.
+[2024-08-25 11:58:06] Merged 110172 bytes (107.59 KiB) for 'jsdoc'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'range_quantifier_lower_bound'.
+[2024-08-25 11:58:06] Merged 448 bytes for 'range_quantifier_lower_bound'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'range_quantifier_upper_bound'.
+[2024-08-25 11:58:06] Merged 432 bytes for 'range_quantifier_upper_bound'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'char_class_escape'.
+[2024-08-25 11:58:06] Merged 56 bytes for 'char_class_escape'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_inverted'.
+[2024-08-25 11:58:06] Merged 4 bytes for 'is_inverted'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc_tags'.
+[2024-08-25 11:58:06] Merged 362800 bytes (354.30 KiB) for 'jsdoc_tags'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc_tag_descriptions'.
+[2024-08-25 11:58:06] Merged 27512 bytes (26.87 KiB) for 'jsdoc_tag_descriptions'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc_tag_names'.
+[2024-08-25 11:58:06] Merged 39408 bytes (38.48 KiB) for 'jsdoc_tag_names'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc_errors'.
+[2024-08-25 11:58:06] Merged 3264 bytes (3.19 KiB) for 'jsdoc_errors'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc_type_exprs'.
+[2024-08-25 11:58:06] Merged 464200 bytes (453.32 KiB) for 'jsdoc_type_exprs'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'has_definite_assignment_assertion'.
+[2024-08-25 11:58:06] Merged 28 bytes for 'has_definite_assignment_assertion'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_static'.
+[2024-08-25 11:58:06] Merged 4 bytes for 'is_static'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jump_targets'.
+[2024-08-25 11:58:06] Merged 8 bytes for 'jump_targets'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'types'.
+[2024-08-25 11:58:06] Merged 46728 bytes (45.63 KiB) for 'types'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'type_symbol'.
+[2024-08-25 11:58:06] Merged 11520 bytes (11.25 KiB) for 'type_symbol'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'type_child'.
+[2024-08-25 11:58:06] Merged 49260 bytes (48.11 KiB) for 'type_child'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'type_literal_value'.
+[2024-08-25 11:58:06] Merged 3568 bytes (3.48 KiB) for 'type_literal_value'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'tuple_type_min_length'.
+[2024-08-25 11:58:06] Merged 168 bytes for 'tuple_type_min_length'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'tuple_type_rest_index'.
+[2024-08-25 11:58:06] Merged 16 bytes for 'tuple_type_rest_index'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'type_property'.
+[2024-08-25 11:58:06] Merged 12 bytes for 'type_property'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'type_alias'.
+[2024-08-25 11:58:06] Merged 2416 bytes (2.36 KiB) for 'type_alias'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'symbols'.
+[2024-08-25 11:58:06] Merged 32340 bytes (31.58 KiB) for 'symbols'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'symbol_parent'.
+[2024-08-25 11:58:06] Merged 12616 bytes (12.32 KiB) for 'symbol_parent'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'symbol_module'.
+[2024-08-25 11:58:06] Merged 3872 bytes (3.78 KiB) for 'symbol_module'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'symbol_global'.
+[2024-08-25 11:58:06] Merged 1584 bytes (1.55 KiB) for 'symbol_global'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'type_contains_signature'.
+[2024-08-25 11:58:06] Merged 14384 bytes (14.05 KiB) for 'type_contains_signature'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'signature_types'.
+[2024-08-25 11:58:06] Merged 20560 bytes (20.08 KiB) for 'signature_types'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'signature_contains_type'.
+[2024-08-25 11:58:06] Merged 36228 bytes (35.38 KiB) for 'signature_contains_type'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'signature_parameter_name'.
+[2024-08-25 11:58:06] Merged 25428 bytes (24.83 KiB) for 'signature_parameter_name'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'signature_rest_parameter'.
+[2024-08-25 11:58:06] Merged 400 bytes for 'signature_rest_parameter'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'number_index_type'.
+[2024-08-25 11:58:06] Merged 5224 bytes (5.10 KiB) for 'number_index_type'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'string_index_type'.
+[2024-08-25 11:58:06] Merged 400 bytes for 'string_index_type'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'base_type_names'.
+[2024-08-25 11:58:06] Merged 872 bytes for 'base_type_names'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'self_types'.
+[2024-08-25 11:58:06] Merged 3080 bytes (3.01 KiB) for 'self_types'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_externs'.
+[2024-08-25 11:58:06] Merged 440 bytes for 'is_externs'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc_prefix_qualifier'.
+[2024-08-25 11:58:06] Merged 7192 bytes (7.02 KiB) for 'jsdoc_prefix_qualifier'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc_record_field_name'.
+[2024-08-25 11:58:06] Merged 5964 bytes (5.82 KiB) for 'jsdoc_record_field_name'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'jsdoc_has_new_parameter'.
+[2024-08-25 11:58:06] Merged 28 bytes for 'jsdoc_has_new_parameter'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'is_nodejs'.
+[2024-08-25 11:58:06] Merged 144 bytes for 'is_nodejs'.
+[2024-08-25 11:58:06] Merging 1 fragment for 'sourceLocationPrefix'.
+[2024-08-25 11:58:06] Merged 4 bytes for 'sourceLocationPrefix'.
+[2024-08-25 11:58:06] Saving string and id pools to disk.
+[2024-08-25 11:58:06] Finished importing TRAP files.
+[2024-08-25 11:58:06] Read 57.13 MiB of uncompressed TRAP data.
+[2024-08-25 11:58:06] Relation data size: 17.52 MiB (merge rate: 60.58 MiB/s)
+[2024-08-25 11:58:06] String pool size: 5.53 MiB
+[2024-08-25 11:58:06] ID pool size: 13.00 MiB
+[2024-08-25 11:58:06] [PROGRESS] dataset import> Finished writing database (relations: 17.52 MiB; string pool: 5.53 MiB).
+[2024-08-25 11:58:06] Pausing evaluation to close the cache at sequence stamp o+3
+[2024-08-25 11:58:06] The disk cache is freshly trimmed; leave it be.
+[2024-08-25 11:58:06] Unpausing evaluation
+[2024-08-25 11:58:06] Plumbing command codeql dataset import completed.
+[2024-08-25 11:58:06] [PROGRESS] database finalize> TRAP import complete (2.2s).
+[2024-08-25 11:58:06] Running plumbing command: codeql database cleanup -- /home/mrjones/databases/redeye1
+[2024-08-25 11:58:06] [PROGRESS] database cleanup> Cleaning up existing TRAP files after import...
+[2024-08-25 11:58:06] [PROGRESS] database cleanup> TRAP files cleaned up (5ms).
+[2024-08-25 11:58:06] [PROGRESS] database cleanup> Cleaning up scratch directory...
+[2024-08-25 11:58:06] [PROGRESS] database cleanup> Scratch directory cleaned up (0ms).
+[2024-08-25 11:58:06] Running plumbing command: codeql dataset cleanup -- /home/mrjones/databases/redeye1/db-javascript
+[2024-08-25 11:58:06] [PROGRESS] dataset cleanup> Cleaning up dataset in /home/mrjones/databases/redeye1/db-javascript.
+[2024-08-25 11:58:06] Trimming disk cache at /home/mrjones/databases/redeye1/db-javascript/default/cache in mode trim.
+[2024-08-25 11:58:06] Sequence stamp origin is -6146794471305821545
+[2024-08-25 11:58:06] Pausing evaluation to quickly trim memory at sequence stamp o+0
+[2024-08-25 11:58:06] Unpausing evaluation
+[2024-08-25 11:58:06] Pausing evaluation to zealously trim disk at sequence stamp o+1
+[2024-08-25 11:58:06] Unpausing evaluation
+[2024-08-25 11:58:06] Trimming completed (2ms): Trimmed disposable data from cache.
+[2024-08-25 11:58:06] Pausing evaluation to close the cache at sequence stamp o+2
+[2024-08-25 11:58:06] The disk cache is freshly trimmed; leave it be.
+[2024-08-25 11:58:06] Unpausing evaluation
+[2024-08-25 11:58:06] [PROGRESS] dataset cleanup> Trimmed disposable data from cache.
+[2024-08-25 11:58:06] [PROGRESS] dataset cleanup> Finalizing dataset in /home/mrjones/databases/redeye1/db-javascript
+[2024-08-25 11:58:06] [DETAILS] dataset cleanup> Finished deleting ID pool from /home/mrjones/databases/redeye1/db-javascript (2ms).
+[2024-08-25 11:58:06] Plumbing command codeql dataset cleanup completed.
+[2024-08-25 11:58:06] Plumbing command codeql database cleanup completed with status 0.
+[2024-08-25 11:58:06] [PROGRESS] database finalize> Finished zipping source archive (322.07 KiB).
+[2024-08-25 11:58:06] Plumbing command codeql database finalize completed.
+[2024-08-25 11:58:06] [PROGRESS] database create> Successfully created database at /home/mrjones/databases/redeye1.
+[2024-08-25 11:58:06] Terminating normally.
